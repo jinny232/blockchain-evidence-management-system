@@ -1,0 +1,93 @@
+Project memory:
+
+I am building a Next.js 16 project called evidence-clean for a Blockchain Based Evidence Management System.
+
+Tech:
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- MySQL with mysql2
+- JWT auth with jose
+- bcryptjs for password hashing
+- zod for validation
+
+Project path:
+C:\evidence-clean
+
+Auth rules:
+- Use jose only, not jsonwebtoken.
+- Cookie name is session.
+- Login page: /login
+- Login API: /api/auth/login
+- Logout API: /api/auth/logout
+- Admin route: /admin
+- Investigator route: /investigator
+- Lab Technician route: /lab
+- Lawyer route: /legal
+- Judge route: /judge
+
+Important auth files:
+- lib/db.ts
+- lib/session.ts
+- lib/authorization.ts
+- services/auth.service.ts
+- controllers/auth.controller.ts
+- app/api/auth/login/route.ts
+- app/api/auth/logout/route.ts
+- proxy.ts
+- models/user.model.ts
+
+Current working features:
+- Login works
+- JWT session cookie works
+- Admin protected route works
+- Admin dashboard exists
+- Admin sidebar exists
+- Admin user management works
+- Create user modal works
+- Edit user modal works
+- Delete user button works
+- Search/filter users works
+
+Admin files:
+- app/admin/layout.tsx
+- app/admin/page.tsx
+- app/admin/users/page.tsx
+- components/admin/AdminSidebar.tsx
+- components/admin/UsersClient.tsx
+- components/admin/CreateUserModal.tsx
+- components/admin/EditUserModal.tsx
+- services/user.service.ts
+- controllers/user.controller.ts
+- app/api/admin/users/route.ts
+- app/api/admin/users/[id]/route.ts
+
+Database users table expected columns:
+- id
+- full_name
+- username
+- email
+- password_hash
+- role
+- active
+
+Role values:
+- Admin
+- Investigator
+- Lab Technician
+- Lawyer
+- Judge
+
+Design:
+- Dark dashboard UI
+- Sidebar layout for admin
+- Use modals for create/edit
+- Use search/filter boxes where useful
+- Use emoji icons if simple icons are needed
+
+When helping me, give:
+1. Terminal commands to create files/folders
+2. Complete code for each file
+3. Clear restart/test steps
+
+Next, help me build the Case Registry page for admin.

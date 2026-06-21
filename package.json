@@ -1,0 +1,41 @@
+{
+  "name": "evidence-clean",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:ganache": "node scripts/test-ganache.js",
+    "deploy:ganache": "node scripts/deploy.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.17.0",
+    "jose": "^6.2.3",
+    "mysql2": "^3.22.5",
+    "next": "16.2.9",
+    "pdfkit": "^0.19.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "solc": "^0.8.35",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pdfkit": "^0.17.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "ganache": "^7.9.2",
+    "hardhat": "^3.9.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "type": "module"
+}

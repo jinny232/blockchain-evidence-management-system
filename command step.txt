@@ -1,0 +1,11 @@
+step1 
+
+npx ganache --host 127.0.0.1 --port 7545 --wallet.deterministic
+
+step 2
+
+npm run test:ganache
+
+step 3
+
+npm run deploy:ganache
