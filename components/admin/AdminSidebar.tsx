@@ -30,7 +30,7 @@ const navItems: DashboardNavItem[] = [
     icon: "T",
   },
   {
-    href: "/admin/audit",
+    href: "/admin/audit-logs",
     label: "Audit Logs",
     subtitle: "System history",
     icon: "A",
