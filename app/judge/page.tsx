@@ -68,7 +68,7 @@ export default function JudgeDashboardClient() {
               Welcome back,
             </p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
-              ⚖ {data.judge.full_name}
+              ⚖️ {data.judge.full_name}
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-amber-50">
               Review assigned court cases, verify blockchain evidence, examine

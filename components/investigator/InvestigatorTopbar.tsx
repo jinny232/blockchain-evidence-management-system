@@ -1,6 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+
 
 function getTitle(pathname: string) {
   if (pathname === "/investigator") return "Dashboard Overview";
@@ -32,6 +34,9 @@ export default function InvestigatorTopbar() {
         <div className="hidden rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm md:block">
           🔐 Role Protected
         </div>
+             <div className="flex shrink-0 items-center">
+                <ThemeToggle />
+              </div>
       </div>
     </header>
   );

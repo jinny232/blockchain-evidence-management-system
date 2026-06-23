@@ -9,38 +9,38 @@ const navItems: DashboardNavItem[] = [
     href: "/judge",
     label: "Dashboard",
     subtitle: "Overview",
-    icon: "D",
+    icon: "📊",
   },
   {
     href: "/judge/cases",
     label: "Cases",
     subtitle: "Ready for decision",
-    icon: "C",
+    icon: "📁",
   },
   {
     href: "/judge/evidence",
     label: "Evidence Review",
     subtitle: "Final review",
-    icon: "E",
+    icon: "🧾",
   },
   {
     href: "/judge/verdicts",
     label: "Verdicts",
     subtitle: "Final decisions",
-    icon: "V",
+    icon: "⚖️",
   },
   {
     href: "/judge/activity",
     label: "Judge Activity",
     subtitle: "Action history",
-    icon: "A",
+    icon: "🕒",
   },
   {
-  href: "/verify",
-  label: "Verify Evidence",
-  subtitle: "Hash integrity",
-  icon: "V",
-},
+    href: "/verify",
+    label: "Verify Evidence",
+    subtitle: "Hash integrity",
+    icon: "🛡️",
+  },
 ];
 
 export default function JudgeSidebar() {
@@ -49,7 +49,7 @@ export default function JudgeSidebar() {
       title="Judge Panel"
       subtitle="Final Case Decision"
       sectionLabel="Court"
-      logo="J"
+      logo="⚖️"
       accent="amber"
       navItems={navItems}
     />

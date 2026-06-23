@@ -12,10 +12,10 @@ export default function LoginPage() {
             Forensic Evidence System
           </p>
 
-          <h1 className="text-3xl font-bold">Secure Login</h1>
+          <h1 className="text-3xl font-bold">EVELOCK</h1>
 
           <p className="mt-3 text-sm text-slate-300">
-            Sign in to access your role-based workspace.
+           Secure access to your trusted evidence workspace.
           </p>
         </div>
 

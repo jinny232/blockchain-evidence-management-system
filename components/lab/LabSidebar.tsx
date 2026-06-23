@@ -9,32 +9,32 @@ const navItems: DashboardNavItem[] = [
     href: "/lab",
     label: "Dashboard",
     subtitle: "Overview",
-    icon: "D",
+    icon: "📊",
   },
   {
     href: "/lab/evidence",
     label: "Evidence Queue",
     subtitle: "Pending & accepted",
-    icon: "E",
+    icon: "🧪",
   },
   {
     href: "/lab/reports",
     label: "Lab Reports",
     subtitle: "Analysis results",
-    icon: "R",
+    icon: "📋",
   },
   {
     href: "/lab/activity",
     label: "Lab Activity",
     subtitle: "Action history",
-    icon: "A",
+    icon: "🕒",
   },
   {
-  href: "/verify",
-  label: "Verify Evidence",
-  subtitle: "Hash integrity",
-  icon: "V",
-},
+    href: "/verify",
+    label: "Verify Evidence",
+    subtitle: "Hash integrity",
+    icon: "🛡️",
+  },
 ];
 
 export default function LabSidebar() {
@@ -43,7 +43,7 @@ export default function LabSidebar() {
       title="Lab Technician"
       subtitle="Evidence Analysis System"
       sectionLabel="Laboratory"
-      logo="L"
+      logo="⚗️"
       accent="emerald"
       navItems={navItems}
     />

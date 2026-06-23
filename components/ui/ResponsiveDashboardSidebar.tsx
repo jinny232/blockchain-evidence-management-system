@@ -32,6 +32,7 @@ const accentClasses: Record<
   {
     logo: string;
     active: string;
+    activeGlow: string;
     icon: string;
     iconActive: string;
     subtitle: string;
@@ -39,43 +40,48 @@ const accentClasses: Record<
   }
 > = {
   blue: {
-    logo: "bg-blue-600 shadow-blue-900/40",
+    logo: "bg-blue-600 text-white shadow-blue-900/40",
     active: "bg-blue-600 text-white shadow-lg shadow-blue-950/40",
-    icon: "bg-white/10 text-blue-200 group-hover:bg-white/15",
+    activeGlow: "bg-blue-300",
+    icon: "bg-slate-100 text-blue-600 group-hover:bg-slate-200 dark:bg-white/10 dark:text-blue-200 dark:group-hover:bg-white/15",
     iconActive: "bg-white/15 text-white",
-    subtitle: "text-blue-200",
+    subtitle: "text-blue-600 dark:text-blue-200",
     mobileButton: "bg-blue-600 shadow-blue-200 hover:bg-blue-700",
   },
   emerald: {
-    logo: "bg-emerald-600 shadow-emerald-900/40",
+    logo: "bg-emerald-600 text-white shadow-emerald-900/40",
     active: "bg-emerald-600 text-white shadow-lg shadow-emerald-950/40",
-    icon: "bg-white/10 text-emerald-200 group-hover:bg-white/15",
+    activeGlow: "bg-emerald-300",
+    icon: "bg-slate-100 text-emerald-600 group-hover:bg-slate-200 dark:bg-white/10 dark:text-emerald-200 dark:group-hover:bg-white/15",
     iconActive: "bg-white/15 text-white",
-    subtitle: "text-emerald-200",
+    subtitle: "text-emerald-600 dark:text-emerald-200",
     mobileButton: "bg-emerald-600 shadow-emerald-200 hover:bg-emerald-700",
   },
   purple: {
-    logo: "bg-purple-600 shadow-purple-900/40",
+    logo: "bg-purple-600 text-white shadow-purple-900/40",
     active: "bg-purple-600 text-white shadow-lg shadow-purple-950/40",
-    icon: "bg-white/10 text-purple-200 group-hover:bg-white/15",
+    activeGlow: "bg-purple-300",
+    icon: "bg-slate-100 text-purple-600 group-hover:bg-slate-200 dark:bg-white/10 dark:text-purple-200 dark:group-hover:bg-white/15",
     iconActive: "bg-white/15 text-white",
-    subtitle: "text-purple-200",
+    subtitle: "text-purple-600 dark:text-purple-200",
     mobileButton: "bg-purple-600 shadow-purple-200 hover:bg-purple-700",
   },
   amber: {
-    logo: "bg-amber-500 shadow-amber-900/40",
+    logo: "bg-yellow-600 text-white shadow-yellow-900/40",
     active: "bg-amber-500 text-white shadow-lg shadow-amber-950/40",
-    icon: "bg-white/10 text-amber-200 group-hover:bg-white/15",
+    activeGlow: "bg-amber-200",
+    icon: "bg-slate-100 text-amber-600 group-hover:bg-slate-200 dark:bg-white/10 dark:text-amber-200 dark:group-hover:bg-white/15",
     iconActive: "bg-white/15 text-white",
-    subtitle: "text-amber-200",
+    subtitle: "text-amber-600 dark:text-amber-200",
     mobileButton: "bg-amber-500 shadow-amber-200 hover:bg-amber-600",
   },
   rose: {
-    logo: "bg-rose-600 shadow-rose-900/40",
+    logo: "bg-rose-600 text-white shadow-rose-900/40",
     active: "bg-rose-600 text-white shadow-lg shadow-rose-950/40",
-    icon: "bg-white/10 text-rose-200 group-hover:bg-white/15",
+    activeGlow: "bg-rose-300",
+    icon: "bg-slate-100 text-rose-600 group-hover:bg-slate-200 dark:bg-white/10 dark:text-rose-200 dark:group-hover:bg-white/15",
     iconActive: "bg-white/15 text-white",
-    subtitle: "text-rose-200",
+    subtitle: "text-rose-600 dark:text-rose-200",
     mobileButton: "bg-rose-600 shadow-rose-200 hover:bg-rose-700",
   },
 };
@@ -113,6 +119,10 @@ export default function ResponsiveDashboardSidebar({
     if (href === "/legal") return pathname === "/legal";
     if (href === "/judge") return pathname === "/judge";
 
+      if (href === "/investigator/evidence") {
+    return pathname === "/investigator/evidence";
+  }
+
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
@@ -128,7 +138,7 @@ export default function ResponsiveDashboardSidebar({
   function SidebarContent({ mobile = false }: { mobile?: boolean }) {
     return (
       <div className="flex h-full flex-col">
-        <div className="flex items-center gap-4 border-b border-white/10 px-6 py-6">
+        <div className="flex items-center gap-4 border-b border-slate-200 px-6 py-6 transition-colors dark:border-white/10">
           <div
             className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-2xl font-black shadow-lg ${theme.logo}`}
           >
@@ -136,7 +146,9 @@ export default function ResponsiveDashboardSidebar({
           </div>
 
           <div className="min-w-0 flex-1">
-            <h1 className="truncate text-xl font-bold">{title}</h1>
+            <h1 className="truncate text-xl font-bold text-slate-950 dark:text-white">
+              {title}
+            </h1>
             <p className={`truncate text-sm ${theme.subtitle}`}>{subtitle}</p>
           </div>
 
@@ -144,7 +156,7 @@ export default function ResponsiveDashboardSidebar({
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-sm font-bold text-white hover:bg-white/20"
+              className="rounded-xl border border-slate-200 bg-slate-100 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-200 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
               aria-label="Close menu"
             >
               ✕
@@ -152,7 +164,7 @@ export default function ResponsiveDashboardSidebar({
           )}
         </div>
 
-        <nav className="custom-scrollbar flex-1 space-y-2 overflow-y-auto px-5 py-7">
+        <nav className="sidebar-scroll flex-1 space-y-2 overflow-y-auto px-5 py-7">
           <p className="mb-5 px-2 text-xs font-bold uppercase tracking-[0.35em] text-slate-500">
             {sectionLabel}
           </p>
@@ -165,14 +177,20 @@ export default function ResponsiveDashboardSidebar({
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`group flex items-center gap-4 rounded-2xl px-4 py-4 transition ${
+                className={`group relative flex items-center gap-4 rounded-2xl px-4 py-4 transition duration-200 ${
                   active
                     ? theme.active
-                    : "text-slate-300 hover:bg-white/10 hover:text-white"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
                 }`}
               >
+                {active && (
+                  <span
+                    className={`absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full ${theme.activeGlow}`}
+                  />
+                )}
+
                 <span
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-black ${
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-base font-black ${
                     active ? theme.iconActive : theme.icon
                   }`}
                 >
@@ -185,7 +203,7 @@ export default function ResponsiveDashboardSidebar({
                   </span>
                   <span
                     className={`block truncate text-sm ${
-                      active ? "text-white/80" : "text-slate-400"
+                      active ? "text-white/80" : "text-slate-500 dark:text-slate-400"
                     }`}
                   >
                     {item.subtitle}
@@ -196,15 +214,40 @@ export default function ResponsiveDashboardSidebar({
           })}
         </nav>
 
-        <div className="border-t border-white/10 p-5">
+        <div className="border-t border-slate-200 p-5 transition-colors dark:border-white/10">
           <button
             type="button"
             onClick={handleLogout}
-            className="flex w-full items-center justify-center gap-3 rounded-2xl border border-red-500/40 bg-red-950/30 px-4 py-4 font-bold text-red-100 transition hover:bg-red-900/50"
+            className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 font-bold text-slate-700 transition hover:border-red-300 hover:bg-red-50 hover:text-red-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-red-500/40 dark:hover:bg-red-950/40 dark:hover:text-red-100"
           >
-            🚪 Logout
+            <span className="text-lg">🚪</span>
+            Logout
           </button>
         </div>
+
+        <style jsx>{`
+          .sidebar-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+          }
+
+          .sidebar-scroll::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          .sidebar-scroll::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.3);
+            border-radius: 999px;
+          }
+
+          .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(148, 163, 184, 0.5);
+          }
+        `}</style>
       </div>
     );
   }
@@ -220,7 +263,7 @@ export default function ResponsiveDashboardSidebar({
         ☰
       </button>
 
-      <aside className="fixed left-0 top-0 z-40 hidden h-screen w-80 border-r border-white/10 bg-slate-950 text-white lg:block">
+      <aside className="fixed left-0 top-0 z-40 hidden h-screen w-72 border-r border-slate-200 bg-white text-slate-950 shadow-sm transition-colors dark:border-white/10 dark:bg-slate-950 dark:text-white lg:block">
         <SidebarContent />
       </aside>
 
@@ -233,7 +276,7 @@ export default function ResponsiveDashboardSidebar({
             aria-label="Close menu overlay"
           />
 
-          <aside className="relative z-10 h-full w-80 max-w-[86vw] border-r border-white/10 bg-slate-950 text-white shadow-2xl">
+          <aside className="relative z-10 h-full w-72 max-w-[86vw] border-r border-slate-200 bg-white text-slate-950 shadow-2xl transition-colors dark:border-white/10 dark:bg-slate-950 dark:text-white">
             <SidebarContent mobile />
           </aside>
         </div>

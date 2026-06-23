@@ -9,19 +9,19 @@ const navItems: DashboardNavItem[] = [
     href: "/admin",
     label: "Dashboard",
     subtitle: "System overview",
-    icon: "D",
+    icon: "📊",
   },
   {
     href: "/admin/users",
     label: "Users",
     subtitle: "RBAC accounts",
-    icon: "U",
+    icon: "👥",
   },
   {
     href: "/admin/cases",
     label: "Cases",
     subtitle: "Case registry",
-    icon: "C",
+    icon: "📁",
   },
   {
     href: "/admin/teams",
@@ -33,20 +33,14 @@ const navItems: DashboardNavItem[] = [
     href: "/admin/audit-logs",
     label: "Audit Logs",
     subtitle: "System history",
-    icon: "A",
+    icon: "🧑‍💼",
   },
   {
     href: "/admin/infrastructure",
     label: "Infrastructure",
     subtitle: "Blockchain status",
-    icon: "I",
+    icon: "🧾",
   },
-  {
-  href: "/verify",
-  label: "Verify Evidence",
-  subtitle: "Hash integrity",
-  icon: "V",
-},
 ];
 
 export default function AdminSidebar() {

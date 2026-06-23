@@ -9,7 +9,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen overflow-hidden bg-slate-50 text-slate-950">
+    <div className="min-h-screen overflow-hidden bg-slate-50 text-slate-950 transition-colors dark:bg-slate-950 dark:text-white">
       <CursorParticles />
 
       <div className="relative z-10 flex min-h-screen">
@@ -21,6 +21,7 @@ export default function AdminLayout({
           <section className="px-5 py-8 sm:px-8">{children}</section>
         </main>
       </div>
+
       <TrustedAssistant />
     </div>
   );

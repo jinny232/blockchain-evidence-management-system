@@ -98,7 +98,7 @@ export default function EvidenceVerificationClient() {
           <div className="relative flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-200">
-                Blockchain Evidence System
+                EVELOCK
               </p>
 
               <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
