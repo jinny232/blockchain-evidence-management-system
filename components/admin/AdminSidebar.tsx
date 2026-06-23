@@ -27,7 +27,7 @@ const navItems: DashboardNavItem[] = [
     href: "/admin/teams",
     label: "Teams",
     subtitle: "Case assignment",
-    icon: "T",
+    icon: "🧩",
   },
   {
     href: "/admin/audit-logs",
